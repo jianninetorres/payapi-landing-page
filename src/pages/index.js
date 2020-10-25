@@ -5,6 +5,7 @@ import bgCircle from "../assets/images/bg-pattern-circle.svg"
 import phone from "../assets/images/phone.svg"
 
 import Form from "../components/Form"
+import Contact from "../components/Contact"
 
 const HeaderStyles = styled.section`
   display: flex;
@@ -30,6 +31,7 @@ export default function Home() {
         buttonText="Schedule a Demo"
         bgColor="hot-pink"
       />
+      <Contact description="Have any questions?" />
     </>
   )
 }

@@ -15,8 +15,9 @@ const GlobalStyles = createGlobalStyle`
 
     html {
         font-size: var(--base-size);
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Regular', sans-serif;
         box-sizing: border-box;
+        color: var(--blue-grey)
     }
 
     body {
@@ -27,19 +28,12 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: inherit;
     }
 
-    h1 {
+    h1, h2, h3, h4, h5, h6 {
         font-family: "Playfair Display", georgia, serif;
     }
 
-    h1, h2, h3 {
-        font-weight: 700;
-    }
-
-    h4, h5, h6 {
-        font-weight: 500;
-    }
-
     p {
+        font-family: "Roboto Regular", georgia, serif;
         font-size: 1rem;
         font-weight: 400;
     }
