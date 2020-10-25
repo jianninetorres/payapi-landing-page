@@ -27,16 +27,39 @@ const FormStyles = styled.form`
   }
 `
 
-const Form = ({ title, placeholder, buttonText, bgColor }) => {
-  return (
-    <FormStyles>
-      <h1>{title}</h1>
-      <input type="text" placeholder={placeholder} value="" />
-      <button type="button" class={bgColor}>
-        {buttonText}
-      </button>
-    </FormStyles>
-  )
+class Form extends React.Component {
+  state = { userInput: "" }
+
+  handleInputChange = event => {
+    const value = event.target.value
+    this.setState({
+      userInput: value,
+    })
+  }
+
+  onHandleSubmit = () => {
+    this.setState({
+      userInput: "",
+    })
+  }
+
+  render() {
+    return (
+      <FormStyles onSubmit={this.onHandleSubmit}>
+        <h1>{this.props.title}</h1>
+        <input
+          type="text"
+          placeholder={this.props.placeholder}
+          name="email"
+          value={this.state.userInput}
+          onChange={this.handleInputChange}
+        />
+        <button type="submit" className={this.props.bgColor}>
+          {this.props.buttonText}
+        </button>
+      </FormStyles>
+    )
+  }
 }
 
 export default Form
