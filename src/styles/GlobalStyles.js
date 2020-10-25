@@ -37,6 +37,12 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
         font-weight: 400;
     }
+
+    input,
+    button {
+        font-family: "Roboto Medium", georgia, serif;
+        font-size: 1rem;
+    }
 `
 
 export default GlobalStyles
