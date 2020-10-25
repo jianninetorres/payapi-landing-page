@@ -7,7 +7,9 @@ import menu from "../assets/images/menu.svg"
 
 const NavStyles = styled.nav`
   background-color: var(--light-grey);
-  padding: calc(var(--base-size) * 2) var(--base-size);
+  padding: var(--base-size);
+  position: fixed;
+  width: 100%;
 
   .nav-container {
     display: flex;
