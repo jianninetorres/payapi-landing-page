@@ -7,7 +7,7 @@ import Nav from "../components/Nav"
 import styled from "styled-components"
 
 const MainContentStyles = styled.div`
-  padding-top: calc(var(--base-size) * 5);
+  padding: calc(var(--base-size) * 5) 0;
 `
 
 const Layout = ({ children }) => (
