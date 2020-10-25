@@ -6,14 +6,19 @@ const GlobalStyles = createGlobalStyle`
     :root {
         --base-size: 16px;
         --blue-grey: #375369;
-        --light-grey: #36536B;
+        --light-grey: #CFD8E1;
         --blue-black: #1C262F;
+        --page-grey: #EAEFF5;
     }
 
     html {
         font-size: var(--base-size);
         font-family: 'Roboto', sans-serif;
         box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--page-grey)
     }
 
     *, *:before, *:after {
