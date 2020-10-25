@@ -6,8 +6,10 @@ import logo from "../assets/images/logo.svg"
 import menu from "../assets/images/menu.svg"
 
 const NavStyles = styled.nav`
-  background-color: rgba(54, 83, 107, 0.15);
+  background-color: var(--light-grey);
   padding: var(--base-size);
+  position: fixed;
+  width: 100%;
 
   .nav-container {
     display: flex;

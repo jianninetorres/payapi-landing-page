@@ -13,6 +13,11 @@ const GlobalStyles = createGlobalStyle`
     html {
         font-size: var(--base-size);
         font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
 
     h1 {
