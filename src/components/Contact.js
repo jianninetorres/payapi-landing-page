@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const ContactStyles = styled.section`
+const ContactStyles = styled.div`
   display: flex;
   justify-content: center;
   a {

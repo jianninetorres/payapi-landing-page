@@ -4,6 +4,7 @@ import styled from "styled-components"
 import bgCircle from "../assets/images/bg-pattern-circle.svg"
 import phone from "../assets/images/phone.svg"
 
+import Section from "../components/Section"
 import Form from "../components/Form"
 import Contact from "../components/Contact"
 
@@ -25,13 +26,18 @@ export default function Home() {
       <HeaderStyles>
         <PhoneStyles src={phone} alt="" />
       </HeaderStyles>
-      <Form
-        title="Start building with our APIs for absolutely free"
-        placeholder="Enter email address"
-        buttonText="Schedule a Demo"
-        bgColor="hot-pink"
-      />
-      <Contact description="Have any questions?" />
+      <Section>
+        <Form
+          title="Start building with our APIs for absolutely free"
+          placeholder="Enter email address"
+          buttonText="Schedule a Demo"
+          bgColor="hot-pink"
+        />
+      </Section>
+      <Section>
+        <Contact description="Have any questions?" />
+      </Section>
+      <Section></Section>
     </>
   )
 }
