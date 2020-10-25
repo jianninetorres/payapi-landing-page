@@ -6,7 +6,6 @@ const FormStyles = styled.form`
   text-align: center;
 
   h1 {
-    font-size: calc(var(--base-size) * 2);
     margin-bottom: calc(var(--base-size) / 2);
   }
 

@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
         font-family: "Playfair Display", georgia, serif;
     }
 
+    h1 {
+        font-size: calc(var(--base-size) * 2.5);
+    }
+
     p {
         font-family: "Roboto Regular", georgia, serif;
         font-size: 1rem;
