@@ -1,16 +1,22 @@
 import { createGlobalStyle } from "styled-components"
 
+import "./typography.css"
+
 const GlobalStyles = createGlobalStyle`
     :root {
         --base-size: 16px;
         --blue-grey: #375369;
-        --light-grey: #d2dbe4;
+        --light-grey: #36536B;
         --blue-black: #1C262F;
     }
 
     html {
         font-size: var(--base-size);
         font-family: 'Roboto', sans-serif;
+    }
+
+    h1 {
+        font-family: "Playfair Display", georgia, serif;
     }
 
     h1, h2, h3 {
