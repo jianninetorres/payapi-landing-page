@@ -5,6 +5,8 @@ import styled from "styled-components"
 const ContactStyles = styled.div`
   display: flex;
   justify-content: center;
+  padding-bottom: calc(var(--base-size) * 2);
+
   a {
     color: var(--blue-grey);
     font-family: "Roboto Medium", sans-serif;
