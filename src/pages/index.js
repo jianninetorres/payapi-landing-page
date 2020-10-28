@@ -9,50 +9,51 @@ import google from "../assets/images/google.svg"
 import hewlettPackard from "../assets/images/hewlett-packard.svg"
 import nvidia from "../assets/images/nvidia.svg"
 import oracle from "../assets/images/oracle.svg"
+import implement from "../assets/images/implement.svg"
 
 import Section from "../components/Section"
 import HalfPanel from "../components/HalfPanel"
+import FlexCentered from "../components/FlexCentered"
 import Form from "../components/Form"
 import Contact from "../components/Contact"
 import Image from "../components/Image"
 import Button from "../components/Button"
 
 const HeaderStyles = styled.section`
-  display: flex;
-  justify-content: center;
   background: url(${bgCircle}) no-repeat center -100px;
   background-size: 120% 320px;
 `
 
 const PhoneStyles = styled.img`
   width: 300px;
-  padding-left: 30px;
 `
 
 const WhoWeWorkWithStyles = styled.section`
   background: url(${bgCircle}) no-repeat center -100px;
   background-color: var(--blue-black);
   background-size: 120% 350px;
-  padding: calc(var(--base-size) * 4) var(--base-size);
   @media screen and (min-width: 768px) {
     background-position: -150px -250px;
     background-size: 600px;
-    padding-left: calc(var(--base-size) * 4);
-    padding-right: calc(var(--base-size) * 4);
   }
 `
 
-const CompaniesDescriptionStyles = styled.section`
+const PanelDescriptionStyles = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-basis: 600px;
+  padding-top: calc(var(--base-size) * 2);
   @media screen and (min-width: 768px) {
-    order: -1;
     align-items: flex-start;
     padding: 0 var(--base-size);
+  }
+  &.left {
+    @media screen and (min-width: 768px) {
+      order: -1;
+    }
   }
 `
 
@@ -71,28 +72,32 @@ const CompaniesGridStyles = styled.div`
 
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
-    grid-gap: 0;
+    grid-gap: 0 calc(var(--base-size) * 2);
   }
 `
 
-const WhiteH1 = styled.h1`
-  color: var(--white);
+const H1 = styled.h1`
+  &.white {
+    color: var(--white);
+  }
   text-align: center;
-  margin: calc(var(--base-size) * 4) 0 calc(var(--base-size) * 2);
+  margin: 0 0 calc(var(--base-size) * 2);
   @media screen and (min-width: 768px) {
     margin-top: calc(var(--base-size) * 2);
     text-align: left;
   }
 `
 
-const WhiteP = styled.p`
-  color: var(--white);
+const P = styled.p`
+  &.white {
+    color: var(--white);
+  }
   text-align: center;
   margin-bottom: calc(var(--base-size) * 2);
   line-height: 2;
   @media screen and (min-width: 768px) {
     text-align: left;
-    max-width: 500px;
+    max-width: 450px;
   }
 `
 
@@ -100,7 +105,9 @@ export default function Home() {
   return (
     <>
       <HeaderStyles>
-        <PhoneStyles src={phone} alt="" />
+        <FlexCentered>
+          <PhoneStyles src={phone} alt="" />
+        </FlexCentered>
       </HeaderStyles>
       <Section>
         <Form
@@ -124,21 +131,33 @@ export default function Home() {
               <Image image={google} alt="google" />
               <Image image={nvidia} alt="nvidia" />
             </CompaniesGridStyles>
-            <CompaniesDescriptionStyles>
-              <WhiteH1>Who we work with</WhiteH1>
-              <WhiteP>
+            <PanelDescriptionStyles className="left">
+              <H1 className="white">Who we work with</H1>
+              <P className="white">
                 Today, millions of people around the world have successfully
                 connected their accounts to apps they love using our API. We
                 provide developers with the tools they need to create easy and
                 accessible experiences for their users.
-              </WhiteP>
+              </P>
               <Button type="button" text="About us" bgColor="blue-black" />
-            </CompaniesDescriptionStyles>
+            </PanelDescriptionStyles>
           </HalfPanel>
         </Section>
       </WhoWeWorkWithStyles>
       <Section>
-        <h1>Easy to implement</h1>
+        <HalfPanel>
+          <FlexCentered>
+            <Image image={implement} alt="terminal" />
+          </FlexCentered>
+          <PanelDescriptionStyles>
+            <H1>Easy to implement</H1>
+            <P>
+              Our API comes with just a few lines of code. You’ll be up and
+              running in no time. We built our documentation page to integrate
+              payments functionality with ease.
+            </P>
+          </PanelDescriptionStyles>
+        </HalfPanel>
       </Section>
     </>
   )

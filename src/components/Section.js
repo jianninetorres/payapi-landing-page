@@ -3,7 +3,11 @@ import React from "react"
 import styled from "styled-components"
 
 const SectionStyles = styled.section`
-  padding: 0 var(--base-size);
+  padding: calc(var(--base-size) * 4) var(--base-size);
+  @media screen and (min-width: 768px) {
+    padding-left: calc(var(--base-size) * 4);
+    padding-right: calc(var(--base-size) * 4);
+  }
 `
 
 const SectionStylesContainer = styled.div`
