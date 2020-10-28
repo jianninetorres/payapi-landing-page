@@ -10,6 +10,7 @@ import hewlettPackard from "../assets/images/hewlett-packard.svg"
 import nvidia from "../assets/images/nvidia.svg"
 import oracle from "../assets/images/oracle.svg"
 import implement from "../assets/images/implement.svg"
+import simpleUI from "../assets/images/simple-ui.svg"
 
 import Section from "../components/Section"
 import HalfPanel from "../components/HalfPanel"
@@ -112,6 +113,20 @@ export default function Home() {
               Our API comes with just a few lines of code. You’ll be up and
               running in no time. We built our documentation page to integrate
               payments functionality with ease.
+            </P>
+          </PanelDescription>
+        </HalfPanel>
+      </Section>
+      <Section background="bg-circle-left">
+        <HalfPanel>
+          <FlexCentered>
+            <Image image={simpleUI} alt="simple UI" />
+          </FlexCentered>
+          <PanelDescription order="left">
+            <H1>Simple UI & UX</H1>
+            <P>
+              Our pre-built form is easy to integrate in your app or website’s
+              checkout flow and designed to optimize conversion.
             </P>
           </PanelDescription>
         </HalfPanel>
