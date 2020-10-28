@@ -14,6 +14,9 @@ import implement from "../assets/images/implement.svg"
 import Section from "../components/Section"
 import HalfPanel from "../components/HalfPanel"
 import FlexCentered from "../components/FlexCentered"
+import PanelDescription from "../components/PanelDescription"
+import H1 from "../components/H1"
+import P from "../components/Paragraph"
 import Form from "../components/Form"
 import Contact from "../components/Contact"
 import Image from "../components/Image"
@@ -38,25 +41,6 @@ const WhoWeWorkWithStyles = styled.section`
   }
 `
 
-const PanelDescriptionStyles = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-basis: 600px;
-  padding-top: calc(var(--base-size) * 2);
-  @media screen and (min-width: 768px) {
-    align-items: flex-start;
-    padding: 0 var(--base-size);
-  }
-  &.left {
-    @media screen and (min-width: 768px) {
-      order: -1;
-    }
-  }
-`
-
 const CompaniesGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -76,31 +60,6 @@ const CompaniesGridStyles = styled.div`
   }
 `
 
-const H1 = styled.h1`
-  &.white {
-    color: var(--white);
-  }
-  text-align: center;
-  margin: 0 0 calc(var(--base-size) * 2);
-  @media screen and (min-width: 768px) {
-    margin-top: calc(var(--base-size) * 2);
-    text-align: left;
-  }
-`
-
-const P = styled.p`
-  &.white {
-    color: var(--white);
-  }
-  text-align: center;
-  margin-bottom: calc(var(--base-size) * 2);
-  line-height: 2;
-  @media screen and (min-width: 768px) {
-    text-align: left;
-    max-width: 450px;
-  }
-`
-
 export default function Home() {
   return (
     <>
@@ -116,8 +75,6 @@ export default function Home() {
           buttonText="Schedule a Demo"
           bgColor="hot-pink"
         />
-      </Section>
-      <Section>
         <Contact description="Have any questions?" />
       </Section>
       <WhoWeWorkWithStyles>
@@ -131,16 +88,16 @@ export default function Home() {
               <Image image={google} alt="google" />
               <Image image={nvidia} alt="nvidia" />
             </CompaniesGridStyles>
-            <PanelDescriptionStyles className="left">
-              <H1 className="white">Who we work with</H1>
-              <P className="white">
+            <PanelDescription className="left">
+              <H1 color="white">Who we work with</H1>
+              <P color="white">
                 Today, millions of people around the world have successfully
                 connected their accounts to apps they love using our API. We
                 provide developers with the tools they need to create easy and
                 accessible experiences for their users.
               </P>
               <Button type="button" text="About us" bgColor="blue-black" />
-            </PanelDescriptionStyles>
+            </PanelDescription>
           </HalfPanel>
         </Section>
       </WhoWeWorkWithStyles>
@@ -149,14 +106,14 @@ export default function Home() {
           <FlexCentered>
             <Image image={implement} alt="terminal" />
           </FlexCentered>
-          <PanelDescriptionStyles>
+          <PanelDescription>
             <H1>Easy to implement</H1>
             <P>
               Our API comes with just a few lines of code. You’ll be up and
               running in no time. We built our documentation page to integrate
               payments functionality with ease.
             </P>
-          </PanelDescriptionStyles>
+          </PanelDescription>
         </HalfPanel>
       </Section>
     </>
