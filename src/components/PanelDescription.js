@@ -20,7 +20,11 @@ const PanelDescriptionStyles = styled.section`
     }
   }
 `
-const PanelDescription = ({ children }) => {
-  return <PanelDescriptionStyles>{children}</PanelDescriptionStyles>
+const PanelDescription = ({ children, order }) => {
+  return (
+    <PanelDescriptionStyles className={order}>
+      {children}
+    </PanelDescriptionStyles>
+  )
 }
 export default PanelDescription

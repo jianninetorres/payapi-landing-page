@@ -88,7 +88,7 @@ export default function Home() {
               <Image image={google} alt="google" />
               <Image image={nvidia} alt="nvidia" />
             </CompaniesGridStyles>
-            <PanelDescription className="left">
+            <PanelDescription order="left">
               <H1 color="white">Who we work with</H1>
               <P color="white">
                 Today, millions of people around the world have successfully
