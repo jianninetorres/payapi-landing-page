@@ -30,17 +30,13 @@ const PhoneStyles = styled.img`
 `
 
 const WhoWeWorkWithStyles = styled.section`
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
-  // align-items: center;
   background: url(${bgCircle}) no-repeat center -100px;
   background-color: var(--blue-black);
   background-size: 120% 350px;
   padding: calc(var(--base-size) * 4) var(--base-size);
   @media screen and (min-width: 768px) {
-    background-position: -100%;
-    background-size: contain;
+    background-position: -150px -250px;
+    background-size: 600px;
     padding-left: calc(var(--base-size) * 4);
     padding-right: calc(var(--base-size) * 4);
   }
@@ -53,22 +49,30 @@ const CompaniesDescriptionStyles = styled.section`
   align-items: center;
   width: 100%;
   flex-basis: 600px;
-  padding: 0 var(--base-size);
   @media screen and (min-width: 768px) {
     order: -1;
     align-items: flex-start;
+    padding: 0 var(--base-size);
   }
 `
 
 const CompaniesGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
-  grid-gap: calc(var(--base-size) * 4) calc(var(--base-size) * 2);
+  grid-gap: calc(var(--base-size) * 3);
   justify-items: center;
   align-items: center;
   width: 100%;
   flex-basis: 600px;
-  padding: 0 var(--base-size);
+  @media screen and (min-width: 768px) {
+    grid-gap: calc(var(--base-size) * 4) calc(var(--base-size) * 2);
+    padding: 0 var(--base-size);
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-gap: 0;
+  }
 `
 
 const WhiteH1 = styled.h1`
