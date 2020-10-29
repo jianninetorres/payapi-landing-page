@@ -19,6 +19,7 @@ import Image from "../components/structural/Image"
 import Phone from "../components/pageComponents/Phone"
 import FeaturesGrid from "../components/pageComponents/FeaturesGrid"
 import WhoWeWorkWith from "../components/pageComponents/WhoWeWorkWith"
+import EndCTA from "../components/pageComponents/EndCTA"
 
 const HeaderStyles = styled.section`
   background: url(${bgCircle}) no-repeat center -100px;
@@ -73,6 +74,7 @@ export default function Home() {
         </HalfPanel>
       </Section>
       <FeaturesGrid />
+      <EndCTA title="Ready to start?" />
     </>
   )
 }

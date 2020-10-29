@@ -5,7 +5,7 @@ import styled from "styled-components"
 const ContactStyles = styled.div`
   display: flex;
   justify-content: center;
-  padding-bottom: calc(var(--base-size) * 2);
+  padding: calc(var(--base-size) * 2) 0;
 
   a {
     color: var(--blue-grey);

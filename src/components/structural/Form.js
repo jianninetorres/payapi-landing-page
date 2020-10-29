@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
-  padding: var(--base-size) 0;
   text-align: center;
 
   h1 {
