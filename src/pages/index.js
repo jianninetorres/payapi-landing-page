@@ -12,16 +12,17 @@ import oracle from "../assets/images/oracle.svg"
 import implement from "../assets/images/implement.svg"
 import simpleUI from "../assets/images/simple-ui.svg"
 
-import Section from "../components/Section"
-import HalfPanel from "../components/HalfPanel"
-import FlexCentered from "../components/FlexCentered"
-import PanelDescription from "../components/PanelDescription"
-import H1 from "../components/H1"
-import P from "../components/Paragraph"
-import Form from "../components/Form"
-import Contact from "../components/Contact"
-import Image from "../components/Image"
-import Button from "../components/Button"
+import Section from "../components/structural/Section"
+import HalfPanel from "../components/structural/HalfPanel"
+import Grid from "../components/structural/Grid"
+import FlexCentered from "../components/structural/FlexCentered"
+import PanelDescription from "../components/structural/PanelDescription"
+import H1 from "../components/structural/H1"
+import P from "../components/structural/Paragraph"
+import Form from "../components/structural/Form"
+import Contact from "../components/structural/Contact"
+import Image from "../components/structural/Image"
+import Button from "../components/structural/Button"
 
 const HeaderStyles = styled.section`
   background: url(${bgCircle}) no-repeat center -100px;
@@ -130,6 +131,9 @@ export default function Home() {
             </P>
           </PanelDescription>
         </HalfPanel>
+      </Section>
+      <Section>
+        <Grid></Grid>
       </Section>
     </>
   )

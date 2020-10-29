@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import styled from "styled-components"
-import logo from "../assets/images/logo.svg"
-import menu from "../assets/images/menu.svg"
+import logo from "../../assets/images/logo.svg"
+import menu from "../../assets/images/menu.svg"
 
 const NavStyles = styled.nav`
   background-color: var(--light-grey);

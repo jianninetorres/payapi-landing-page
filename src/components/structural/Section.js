@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 
-import bgCircle from "../assets/images/bg-pattern-circle.svg"
+import bgCircle from "../../assets/images/bg-pattern-circle.svg"
 
 const SectionStyles = styled.section`
   padding: calc(var(--base-size) * 4) var(--base-size);
