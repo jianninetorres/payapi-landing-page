@@ -25,6 +25,42 @@ const HeaderStyles = styled.section`
   background-size: 120% 320px;
 `
 
+const HeaderSectionStyles = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--base-size) * 3) var(--base-size);
+  @media screen and (min-width: 768px) {
+    padding-left: calc(var(--base-size) * 4);
+    padding-right: calc(var(--base-size) * 4);
+  }
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+`
+
+const HeaderContentStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  @media screen and (min-width: 1024px) {
+    align-items: flex-start;
+  }
+`
+
+const PhoneContainerStyles = styled.div`
+  @media screen and (min-width: 1024px) {
+    order: 1;
+  }
+`
+
 const H1Styles = styled.h1`
   text-align: center;
   @media screen and (min-width: 1024px) {
@@ -32,23 +68,34 @@ const H1Styles = styled.h1`
   }
 `
 
+const HeaderH1Styles = styled(H1Styles)`
+  @media screen and (min-width: 1024px) {
+    font-size: calc(var(--base-size) * 4.5);
+    max-width: 550px;
+  }
+`
+
 export default function Home() {
   return (
     <>
       <HeaderStyles>
-        <FlexCentered>
-          <Phone />
-        </FlexCentered>
+        <HeaderSectionStyles>
+          <PhoneContainerStyles>
+            <Phone />
+          </PhoneContainerStyles>
+          <HeaderContentStyles>
+            <HeaderH1Styles>
+              Start building with our APIs for absolutely free
+            </HeaderH1Styles>
+            <Form
+              placeholder="Enter email address"
+              buttonText="Schedule a Demo"
+              bgColor="hot-pink"
+            />
+            <Contact description="Have any questions?" />
+          </HeaderContentStyles>
+        </HeaderSectionStyles>
       </HeaderStyles>
-      <Section>
-        <H1Styles>Start building with our APIs for absolutely free</H1Styles>
-        <Form
-          placeholder="Enter email address"
-          buttonText="Schedule a Demo"
-          bgColor="hot-pink"
-        />
-        <Contact description="Have any questions?" />
-      </Section>
       <WhoWeWorkWith />
       <Section>
         <HalfPanel>

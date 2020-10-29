@@ -2,6 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    max-width: 500px;
+  }
   text-align: center;
 
   h1 {
