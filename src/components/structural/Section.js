@@ -16,6 +16,10 @@ const SectionStyles = styled.section`
       background: url(${bgCircle}) no-repeat 70vw center;
       background-size: contain;
     }
+    @media screen and (min-width: 1200px) {
+      background-size: contain;
+      background-position: calc(50% + 450px) 50%;
+    }
   }
 `
 

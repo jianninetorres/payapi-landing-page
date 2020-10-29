@@ -19,6 +19,10 @@ const WhoWeWorkWithStyles = styled.section`
     background-position: -150px -250px;
     background-size: 600px;
   }
+  @media screen and (min-width: 1200px) {
+    background-size: auto;
+    background-position: calc(50% - 650px) 100%;
+  }
 `
 
 const H1Styles = styled.h1`
