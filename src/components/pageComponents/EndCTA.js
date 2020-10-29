@@ -3,7 +3,6 @@ import React from "react"
 import styled from "styled-components"
 
 import Section from "../structural/Section"
-import H1 from "../structural/H1"
 import Form from "../structural/Form"
 
 const EndCTAStyles = styled.div`
@@ -13,12 +12,19 @@ const EndCTAStyles = styled.div`
   }
 `
 
+const H1Styles = styled.h1`
+  text-align: center;
+  @media screen and (min-width: 1024px) {
+    text-align: left;
+  }
+`
+
 const EndCTA = ({ title }) => {
   return (
     <Section>
       <EndCTAStyles>
         <div>
-          <H1>{title}</H1>
+          <H1Styles>{title}</H1Styles>
         </div>
         <div>
           <Form

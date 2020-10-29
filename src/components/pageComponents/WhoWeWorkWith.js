@@ -8,7 +8,6 @@ import Section from "../../components/structural/Section"
 import HalfPanel from "../../components/structural/HalfPanel"
 import CompaniesGrid from "../../components/pageComponents/CompaniesGrid"
 import PanelDescription from "../../components/structural/PanelDescription"
-import H1 from "../../components/structural/H1"
 import P from "../../components/structural/Paragraph"
 import Button from "../../components/structural/Button"
 
@@ -22,6 +21,14 @@ const WhoWeWorkWithStyles = styled.section`
   }
 `
 
+const H1Styles = styled.h1`
+  color: var(--white);
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+`
+
 const WhoWeWorkWith = () => {
   return (
     <WhoWeWorkWithStyles>
@@ -29,7 +36,7 @@ const WhoWeWorkWith = () => {
         <HalfPanel>
           <CompaniesGrid />
           <PanelDescription order="left">
-            <H1 color="white">Who we work with</H1>
+            <H1Styles color="white">Who we work with</H1Styles>
             <P color="white">
               Today, millions of people around the world have successfully
               connected their accounts to apps they love using our API. We

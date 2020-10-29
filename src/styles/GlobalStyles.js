@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
 
     h1 {
         font-size: calc(var(--base-size) * 2.5);
+        margin: 0 0 calc(var(--base-size) * 2);
+        @media screen and (min-width: 768px) {
+            margin-top: calc(var(--base-size) * 2);
+        }
     }
 
     h3, h4, h5, h6 {
