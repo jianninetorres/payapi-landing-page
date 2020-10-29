@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "../structural/Image"
+import Icon from "../structural/Icon"
 
 import styled from "styled-components"
 
@@ -31,12 +31,12 @@ const CompaniesGridStyles = styled.div`
 const CompaniesGrid = () => {
   return (
     <CompaniesGridStyles>
-      <Image image={tesla} alt="tesla" />
-      <Image image={microsoft} alt="microsoft" />
-      <Image image={hewlettPackard} alt="hewlett packard" />
-      <Image image={oracle} alt="oracle" />
-      <Image image={google} alt="google" />
-      <Image image={nvidia} alt="nvidia" />
+      <Icon image={tesla} alt="tesla" />
+      <Icon image={microsoft} alt="microsoft" />
+      <Icon image={hewlettPackard} alt="hewlett packard" />
+      <Icon image={oracle} alt="oracle" />
+      <Icon image={google} alt="google" />
+      <Icon image={nvidia} alt="nvidia" />
     </CompaniesGridStyles>
   )
 }
