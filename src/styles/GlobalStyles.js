@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
         --page-grey: #EAEFF5;
         --hot-pink: #BA4270;
         --white: #FFFFFF;
+        --transparent: transparent;
     }
 
     html {

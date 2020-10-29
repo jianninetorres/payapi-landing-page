@@ -11,6 +11,10 @@ const NavStyles = styled.nav`
   position: fixed;
   width: 100%;
 
+  @media screen and (min-width: 1200px) {
+    background-color: var(--transparent);
+  }
+
   .nav-container {
     display: flex;
     flex-direction: row;
