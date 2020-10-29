@@ -12,6 +12,12 @@ const EndCTAStyles = styled.div`
   }
 `
 
+const ContainerStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const H1Styles = styled.h1`
   text-align: center;
   @media screen and (min-width: 1024px) {
@@ -23,16 +29,16 @@ const EndCTA = ({ title }) => {
   return (
     <Section>
       <EndCTAStyles>
-        <div>
+        <ContainerStyles>
           <H1Styles>{title}</H1Styles>
-        </div>
-        <div>
+        </ContainerStyles>
+        <ContainerStyles>
           <Form
             placeholder="Enter email address"
             buttonText="Schedule a Demo"
             bgColor="hot-pink"
           />
-        </div>
+        </ContainerStyles>
       </EndCTAStyles>
     </Section>
   )

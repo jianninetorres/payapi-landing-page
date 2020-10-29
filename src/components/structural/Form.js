@@ -58,10 +58,14 @@ class Form extends React.Component {
     })
   }
 
+  showFormTitle = () => {
+    return this.props.title !== "" ? <h1>{this.props.title}</h1> : null
+  }
+
   render() {
     return (
       <FormStyles onSubmit={this.onHandleSubmit}>
-        <h1>{this.props.title}</h1>
+        {this.showFormTitle()}
         <div>
           <input
             type="text"
@@ -77,6 +81,10 @@ class Form extends React.Component {
       </FormStyles>
     )
   }
+}
+
+Form.defaultProps = {
+  title: "",
 }
 
 export default Form

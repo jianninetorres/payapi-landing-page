@@ -27,7 +27,7 @@ const HeaderStyles = styled.section`
 
 const H1Styles = styled.h1`
   text-align: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     text-align: left;
   }
 `
@@ -41,8 +41,8 @@ export default function Home() {
         </FlexCentered>
       </HeaderStyles>
       <Section>
+        <H1Styles>Start building with our APIs for absolutely free</H1Styles>
         <Form
-          title="Start building with our APIs for absolutely free"
           placeholder="Enter email address"
           buttonText="Schedule a Demo"
           bgColor="hot-pink"

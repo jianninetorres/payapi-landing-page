@@ -24,7 +24,7 @@ const WhoWeWorkWithStyles = styled.section`
 const H1Styles = styled.h1`
   color: var(--white);
   text-align: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     text-align: left;
   }
 `
