@@ -9,7 +9,7 @@ const FormStyles = styled.form`
   }
 
   div {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       position: relative;
       width: 100%;
       max-width: 600px;
@@ -29,7 +29,7 @@ const FormStyles = styled.form`
   }
 
   button {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       position: absolute;
       right: 0;
       max-width: 200px;

@@ -8,7 +8,7 @@ import Form from "../structural/Form"
 
 const EndCTAStyles = styled.div`
   display: grid;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
   }
 `
