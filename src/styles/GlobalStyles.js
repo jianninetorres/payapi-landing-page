@@ -28,12 +28,17 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: inherit;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2 {
         font-family: "Libre Baskerville", serif;
+        font-weight: bold;
     }
 
     h1 {
         font-size: calc(var(--base-size) * 2.5);
+    }
+
+    h3, h4, h5, h6 {
+        font-family: "Roboto Medium", georgia, serif;;
     }
 
     p {

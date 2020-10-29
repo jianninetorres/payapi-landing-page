@@ -14,7 +14,7 @@ import simpleUI from "../assets/images/simple-ui.svg"
 
 import Section from "../components/structural/Section"
 import HalfPanel from "../components/structural/HalfPanel"
-import Grid from "../components/structural/Grid"
+// import Grid from "../components/structural/Grid"
 import FlexCentered from "../components/structural/FlexCentered"
 import PanelDescription from "../components/structural/PanelDescription"
 import H1 from "../components/structural/H1"
@@ -23,6 +23,8 @@ import Form from "../components/structural/Form"
 import Contact from "../components/structural/Contact"
 import Image from "../components/structural/Image"
 import Button from "../components/structural/Button"
+
+import FeaturesGrid from "../components/pageComponents/FeaturesGrid"
 
 const HeaderStyles = styled.section`
   background: url(${bgCircle}) no-repeat center -100px;
@@ -132,9 +134,7 @@ export default function Home() {
           </PanelDescription>
         </HalfPanel>
       </Section>
-      <Section>
-        <Grid></Grid>
-      </Section>
+      <FeaturesGrid />
     </>
   )
 }
