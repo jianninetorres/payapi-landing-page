@@ -7,7 +7,7 @@ import Nav from "./Nav"
 import styled from "styled-components"
 
 const MainContentStyles = styled.div`
-  padding: calc(var(--base-size) * 5) 0;
+  padding: calc(var(--base-size) * 5) 0 0;
   @media screen and (min-width: 1200px) {
     padding: 0;
   }

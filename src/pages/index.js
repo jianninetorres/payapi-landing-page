@@ -11,6 +11,7 @@ import FlexCentered from "../components/structural/FlexCentered"
 import PanelDescription from "../components/structural/PanelDescription"
 import P from "../components/structural/Paragraph"
 import Image from "../components/structural/Image"
+import Footer from "../components/structural/Footer"
 
 import HomeHero from "../components/pageComponents/HomeHero"
 import FeaturesGrid from "../components/pageComponents/FeaturesGrid"
@@ -60,6 +61,7 @@ export default function Home() {
       </Section>
       <FeaturesGrid />
       <EndCTA title="Ready to start?" />
+      <Footer />
     </>
   )
 }

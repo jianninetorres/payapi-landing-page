@@ -33,7 +33,9 @@ const NavStyles = styled.nav`
 
   .list-container__item {
     margin: 16px 0;
-    font-weight: 500;
+    > a {
+      font-weight: 600;
+    }
   }
 
   .logo {
