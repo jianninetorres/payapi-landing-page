@@ -10,8 +10,8 @@ import Contact from "../../components/structural/Contact"
 const HeaderStyles = styled.section`
   background: url(${bgCircle}) no-repeat center -100px;
   background-size: 120% 320px;
-  @media screen and (min-width: 1200px) {
-    background-size: contain;
+  @media screen and (min-width: 1024px) {
+    background-size: auto;
     background-position: calc(50% + 450px) calc(50% - 200px);
   }
 `
@@ -31,6 +31,7 @@ const HeaderSectionStyles = styled.div`
   }
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    padding-top: calc(var(--base-size) * 6);
   }
 `
 

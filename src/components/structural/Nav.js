@@ -10,20 +10,36 @@ const NavStyles = styled.nav`
   padding: var(--base-size);
   position: fixed;
   width: 100%;
-
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1024px) {
     background-color: var(--transparent);
   }
 
-  .nav-container {
+  .nav-wrapper {
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  }
+
+  .links-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media screen and (min-width: 1024px) {
+      flex: 1 1 auto;
+    }
   }
 
   .list-container {
     display: none;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: space-evenly;
+      flex: 1 1 auto;
+    }
   }
 
   .list-container--visible {
@@ -32,9 +48,31 @@ const NavStyles = styled.nav`
   }
 
   .list-container__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 16px 0;
     > a {
       font-weight: 600;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin: 0;
+    }
+
+    &--button {
+      display: none;
+      @media screen and (min-width: 1024px) {
+        display: flex;
+        background-color: var(--hot-pink);
+        padding: 0 calc(var(--base-size) * 2);
+        height: calc(var(--base-size) * 4);
+        border-radius: calc(var(--base-size) * 2);
+
+        > a {
+          color: var(--white);
+        }
+      }
     }
   }
 
@@ -59,6 +97,10 @@ const NavStyles = styled.nav`
     &:hover,
     &:focus {
       border: 1px dotted var(--blue-grey);
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: none;
     }
   }
 
@@ -91,38 +133,40 @@ const Nav = () => {
 
   return (
     <NavStyles>
-      <div className="nav-container">
-        <Link to="/">
+      <div className="nav-wrapper">
+        <div className="links-container">
+          <Link to="/">
+            <div
+              className="logo"
+              role="button"
+              aria-label="home"
+              tabIndex={0}
+            ></div>
+          </Link>
           <div
-            className="logo"
+            className="menu-burger"
+            onClick={onClickNav}
+            onKeyUp={onEnter}
             role="button"
-            aria-label="home"
+            aria-label="menu"
             tabIndex={0}
           ></div>
-        </Link>
-        <div
-          className="menu-burger"
-          onClick={onClickNav}
-          onKeyUp={onEnter}
-          role="button"
-          aria-label="menu"
-          tabIndex={0}
-        ></div>
+        </div>
+        <ul className={toggleNav}>
+          <li className="list-container__item">
+            <Link to="/pricing">Pricing</Link>
+          </li>
+          <li className="list-container__item">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="list-container__item">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className="list-container__item list-container__item--button">
+            <Link to="/demo">Schedule a Demo</Link>
+          </li>
+        </ul>
       </div>
-      <ul className={toggleNav}>
-        <li className="list-container__item">
-          <Link to="/pricing">Pricing</Link>
-        </li>
-        <li className="list-container__item">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="list-container__item">
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li className="list-container__item">
-          <Link to="/demo">Schedule a Demo</Link>
-        </li>
-      </ul>
     </NavStyles>
   )
 }
