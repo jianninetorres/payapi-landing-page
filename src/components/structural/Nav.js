@@ -78,7 +78,6 @@ const NavStyles = styled.nav`
 
         &:hover {
           background-color: var(--blue-grey);
-          color: var(--hot-pink);
         }
 
         > a {
