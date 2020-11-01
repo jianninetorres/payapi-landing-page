@@ -42,7 +42,7 @@ const FormStyles = styled.form`
 `
 
 class Form extends React.Component {
-  state = { userInput: "" }
+  state = { userInput: "", email: "" }
 
   handleInputChange = event => {
     const value = event.target.value
@@ -51,10 +51,14 @@ class Form extends React.Component {
     })
   }
 
-  onHandleSubmit = () => {
-    this.setState({
-      userInput: "",
-    })
+  onHandleSubmit = event => {
+    event.preventDefault()
+    if (this.state.userInput !== "") {
+      this.setState({
+        email: this.state.userInput,
+        userInput: "",
+      })
+    }
   }
 
   showFormTitle = () => {
