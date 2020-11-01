@@ -14,6 +14,7 @@ const NavStyles = styled.nav`
   @media screen and (min-width: 1024px) {
     background-color: ${props => props.bgColor};
     transition: background-color 0.2s ease;
+    border-bottom: 1px solid ${props => props.navBottomBorder};
   }
 
   .nav-wrapper {
@@ -121,14 +122,17 @@ const NavStyles = styled.nav`
 const Nav = () => {
   const [toggleNav, setToggleNav] = useState("list-container")
   const [navColor, setNavColor] = useState("transparent")
+  const [navBottomBorder, setNavBottomBorder] = useState("none")
 
   useEffect(() => {
     let mql = window.matchMedia("(min-width: 1024px)")
     window.addEventListener("scroll", () => {
       if (mql.matches && window.scrollY > 0) {
         setNavColor("#FFFFFF")
+        setNavBottomBorder("#CFD8E1")
       } else {
         setNavColor("transparent")
+        setNavBottomBorder("none")
       }
     })
   })
@@ -146,7 +150,7 @@ const Nav = () => {
   }
 
   return (
-    <NavStyles bgColor={navColor}>
+    <NavStyles bgColor={navColor} navBottomBorder={navBottomBorder}>
       <div className="nav-wrapper">
         <div className="links-container">
           <Link to="/">
