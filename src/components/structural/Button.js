@@ -8,16 +8,30 @@ const ButtonStyles = styled.button`
   height: calc(var(--base-size) * 4);
   color: white;
   padding: 0 calc(var(--base-size) * 2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transition: all 0.2s ease;
+  }
 
   &.blue-black {
     border: 2px solid var(--white);
     background-color: var(--transparent);
+    &:hover {
+      background-color: white;
+      color: var(--blue-black);
+    }
   }
 
   &.hot-pink {
     border: 2px solid var(--hot-pink);
     background-color: var(--hot-pink);
     color: var(--white);
+
+    &:hover {
+      background-color: var(--blue-grey);
+      border: 2px solid var(--blue-grey);
+    }
   }
 `
 

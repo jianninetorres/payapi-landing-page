@@ -57,6 +57,9 @@ const NavStyles = styled.nav`
     margin: 16px 0;
     > a {
       font-weight: 600;
+      &:hover {
+        color: var(--hot-pink);
+      }
     }
 
     @media screen and (min-width: 1024px) {
@@ -71,9 +74,19 @@ const NavStyles = styled.nav`
         padding: 0 calc(var(--base-size) * 2);
         height: calc(var(--base-size) * 4);
         border-radius: calc(var(--base-size) * 2);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--blue-grey);
+          color: var(--hot-pink);
+        }
 
         > a {
           color: var(--white);
+          &:hover,
+          &:visited {
+            color: var(--white);
+          }
         }
       }
     }

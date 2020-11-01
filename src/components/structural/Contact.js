@@ -11,6 +11,9 @@ const ContactStyles = styled.div`
     color: var(--blue-grey);
     font-family: "Roboto Medium", sans-serif;
     font-weight: 500;
+    &:hover {
+      color: var(--hot-pink);
+    }
   }
 `
 

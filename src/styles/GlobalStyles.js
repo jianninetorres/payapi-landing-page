@@ -57,6 +57,10 @@ const GlobalStyles = createGlobalStyle`
         font-family: "Roboto Medium", georgia, serif;
         font-size: 1rem;
     }
+
+    button {
+        cursor: pointer;
+    }
 `
 
 export default GlobalStyles
