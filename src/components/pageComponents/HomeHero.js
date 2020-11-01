@@ -8,8 +8,8 @@ import Form from "../../components/structural/Form"
 import Contact from "../../components/structural/Contact"
 
 const HeaderStyles = styled.section`
-  background: url(${bgCircle}) no-repeat center -100px;
-  background-size: 120% 320px;
+  background: url(${bgCircle}) no-repeat center 100px;
+  background-size: 120%, 320px;
   @media screen and (min-width: 1024px) {
     background-size: auto;
     background-position: calc(50% + 450px) calc(50% - 200px);
