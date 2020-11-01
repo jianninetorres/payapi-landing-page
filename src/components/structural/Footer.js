@@ -92,7 +92,7 @@ const Footer = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <ul class="nested">
+          <ul className="nested">
             <li>
               <Icon image={fb} alt="facebook" />
             </li>

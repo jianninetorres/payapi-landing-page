@@ -15,13 +15,15 @@ const MainContentStyles = styled.div`
   }
 `
 
-const Layout = ({ children }) => (
-  <>
-    <GlobalStyles />
-    <Nav />
-    <MainContentStyles>{children}</MainContentStyles>
-    <Footer />
-  </>
-)
+const Layout = ({ children }) => {
+  return (
+    <>
+      <GlobalStyles />
+      <Nav bgColor={"transparent"} />
+      <MainContentStyles>{children}</MainContentStyles>
+      <Footer />
+    </>
+  )
+}
 
 export default Layout

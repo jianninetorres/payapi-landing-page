@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import styled from "styled-components"
@@ -10,8 +10,10 @@ const NavStyles = styled.nav`
   padding: var(--base-size);
   position: fixed;
   width: 100%;
+  z-index: 100;
   @media screen and (min-width: 1024px) {
-    background-color: var(--transparent);
+    background-color: ${props => props.bgColor};
+    transition: background-color 0.2s ease;
   }
 
   .nav-wrapper {
@@ -118,6 +120,18 @@ const NavStyles = styled.nav`
 
 const Nav = () => {
   const [toggleNav, setToggleNav] = useState("list-container")
+  const [navColor, setNavColor] = useState("transparent")
+
+  useEffect(() => {
+    let mql = window.matchMedia("(min-width: 1024px)")
+    window.addEventListener("scroll", () => {
+      if (mql.matches && window.scrollY > 0) {
+        setNavColor("#FFFFFF")
+      } else {
+        setNavColor("transparent")
+      }
+    })
+  })
 
   const onClickNav = () => {
     return toggleNav === "list-container"
@@ -132,7 +146,7 @@ const Nav = () => {
   }
 
   return (
-    <NavStyles>
+    <NavStyles bgColor={navColor}>
       <div className="nav-wrapper">
         <div className="links-container">
           <Link to="/">
