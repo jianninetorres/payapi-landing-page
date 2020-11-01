@@ -39,10 +39,14 @@ const FormStyles = styled.form`
       max-width: 200px;
     }
   }
+
+  .error {
+    color: var(--hot-pink);
+  }
 `
 
 class Form extends React.Component {
-  state = { userInput: "", email: "" }
+  state = { userInput: "", email: "", error: "" }
 
   handleInputChange = event => {
     const value = event.target.value
@@ -53,11 +57,17 @@ class Form extends React.Component {
 
   onHandleSubmit = event => {
     event.preventDefault()
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.userInput)
     if (this.state.userInput !== "") {
-      this.setState({
-        email: this.state.userInput,
-        userInput: "",
-      })
+      emailRegex
+        ? this.setState({
+            email: this.state.userInput,
+            userInput: "",
+            error: "",
+          })
+        : this.setState({
+            error: "Please enter a valid email address.",
+          })
     }
   }
 
@@ -76,6 +86,7 @@ class Form extends React.Component {
             name="email"
             value={this.state.userInput}
             onChange={this.handleInputChange}
+            required
           />
           <Button
             type="submit"
@@ -83,6 +94,7 @@ class Form extends React.Component {
             bgColor={this.props.bgColor}
           />
         </div>
+        {this.state.error && <div class="error">{this.state.error}</div>}
       </FormStyles>
     )
   }
