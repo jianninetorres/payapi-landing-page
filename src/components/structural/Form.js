@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "./Button"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
@@ -21,8 +22,7 @@ const FormStyles = styled.form`
     }
   }
 
-  input,
-  button {
+  input {
     border: none;
     margin: calc(var(--base-size) / 2) 0;
     height: calc(var(--base-size) * 4);
@@ -38,11 +38,6 @@ const FormStyles = styled.form`
       right: 0;
       max-width: 200px;
     }
-  }
-
-  button.hot-pink {
-    background-color: var(--hot-pink);
-    color: var(--white);
   }
 `
 
@@ -78,9 +73,11 @@ class Form extends React.Component {
             value={this.state.userInput}
             onChange={this.handleInputChange}
           />
-          <button type="submit" className={this.props.bgColor}>
-            {this.props.buttonText}
-          </button>
+          <Button
+            type="submit"
+            text={this.props.buttonText}
+            bgColor={this.props.bgColor}
+          />
         </div>
       </FormStyles>
     )
