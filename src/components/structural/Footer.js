@@ -14,8 +14,8 @@ const FooterStyles = styled.footer`
   background-color: var(--blue-black);
 
   .container {
-    background: url(${bgCircle}) no-repeat center calc(50% + 200px);
-    background-size: 120% 350px;
+    background: url(${bgCircle}) no-repeat center 100px;
+    background-size: 120%, 320px;
     padding: calc(var(--base-size) * 2) 0;
     @media screen and (min-width: 768px) {
       display: flex;

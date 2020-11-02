@@ -12,9 +12,9 @@ import P from "../../components/structural/Paragraph"
 import Button from "../../components/structural/Button"
 
 const WhoWeWorkWithStyles = styled.section`
-  background: url(${bgCircle}) no-repeat center -100px;
+  background: url(${bgCircle}) no-repeat center 100px;
+  background-size: 120%, 320px;
   background-color: var(--blue-black);
-  background-size: 120% 350px;
   @media screen and (min-width: 768px) {
     background-position: -150px -250px;
     background-size: 600px;

@@ -7,11 +7,11 @@ const ParagraphStyles = styled.p`
     color: var(--white);
   }
   text-align: center;
-  margin-bottom: calc(var(--base-size) * 2);
   line-height: 2;
   @media screen and (min-width: 768px) {
     text-align: left;
     max-width: 450px;
+    margin-bottom: calc(var(--base-size) * 2);
   }
 `
 
