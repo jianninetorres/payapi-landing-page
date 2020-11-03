@@ -136,14 +136,18 @@ const Nav = () => {
   const [navColor, setNavColor] = useState("transparent")
   const [navBottomBorder, setNavBottomBorder] = useState("none")
 
+  const white = "#FFFFFF"
+  const lightGrey = "#CFD8E1"
+  const transparent = "transparent"
+
   useEffect(() => {
     let mql = window.matchMedia("(min-width: 1024px)")
     window.addEventListener("scroll", () => {
       if (mql.matches && window.scrollY > 0) {
-        setNavColor("#FFFFFF")
-        setNavBottomBorder("#CFD8E1")
+        setNavColor(white)
+        setNavBottomBorder(lightGrey)
       } else {
-        setNavColor("transparent")
+        setNavColor(transparent)
         setNavBottomBorder("none")
       }
     })

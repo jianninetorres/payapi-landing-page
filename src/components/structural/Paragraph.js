@@ -6,8 +6,9 @@ const ParagraphStyles = styled.p`
   &.white {
     color: var(--white);
   }
-  text-align: center;
+  text-align: ${props => props.textAlign || "center"};
   line-height: 2;
+  margin-bottom: var(--base-size);
   @media screen and (min-width: 768px) {
     text-align: left;
     max-width: 450px;
@@ -15,8 +16,12 @@ const ParagraphStyles = styled.p`
   }
 `
 
-const P = ({ children, color }) => {
-  return <ParagraphStyles className={color}>{children}</ParagraphStyles>
+const P = ({ children, color, textAlign }) => {
+  return (
+    <ParagraphStyles className={color} textAlign={textAlign}>
+      {children}
+    </ParagraphStyles>
+  )
 }
 
 export default P

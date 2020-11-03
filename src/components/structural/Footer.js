@@ -19,7 +19,7 @@ const FooterStyles = styled.footer`
     padding: calc(var(--base-size) * 2) 0;
     @media screen and (min-width: 768px) {
       display: flex;
-      padding: var(--base-size) 0;
+      padding: var(--base-size) var(--base-size);
       background-size: 300px;
       background-position: calc(50% + 300px) top;
       width: 100%;

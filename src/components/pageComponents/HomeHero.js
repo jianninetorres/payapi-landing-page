@@ -13,6 +13,8 @@ const HeaderStyles = styled.section`
   @media screen and (min-width: 1024px) {
     background-size: auto;
     background-position: calc(50% + 450px) calc(50% - 200px);
+    padding-left: calc(var(--base-size) * 4);
+    padding-right: calc(var(--base-size) * 4);
   }
 `
 
@@ -25,13 +27,9 @@ const HeaderSectionStyles = styled.div`
   justify-content: center;
   align-items: center;
   padding: calc(var(--base-size) * 3) var(--base-size);
-  @media screen and (min-width: 768px) {
-    padding-left: calc(var(--base-size) * 4);
-    padding-right: calc(var(--base-size) * 4);
-  }
   @media screen and (min-width: 1024px) {
     flex-direction: row;
-    padding-top: calc(var(--base-size) * 6);
+    padding-top: calc(var(--base-size) * 7);
   }
 `
 
@@ -41,7 +39,6 @@ const HeaderContentStyles = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 700px;
   @media screen and (min-width: 1024px) {
     align-items: flex-start;
   }
