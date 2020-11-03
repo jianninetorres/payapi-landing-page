@@ -58,6 +58,22 @@ export default function About() {
           marginTop={"32px"}
           marginBottom={"32px"}
         />
+        <Section>
+          <OneTwoThirdsPanel>
+            <div>
+              <H3Heading>The Culture</H3Heading>
+            </div>
+            <div>
+              <P maxWidth="620px" textAlign="left" marginBottom="0px">
+                We strongly believe there's always an opportunity to learn from
+                each other outside of day-to-day work, whether it's company-wide
+                offsites, internal hackathons, or co-worker meetups. We always
+                value cross-team collaboration and diversity of thought, no
+                matter the job title.
+              </P>
+            </div>
+          </OneTwoThirdsPanel>
+        </Section>
       </TopBackgroundCicle>
     </>
   )
