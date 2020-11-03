@@ -1,5 +1,6 @@
 import React from "react"
 import HeroSection from "../components/structural/HeroSection"
+import HeaderH2 from "../components/structural/HeaderH2"
 import PricingColumn from "../components/structural/PricingColumn"
 import Section from "../components/structural/Section"
 import TopBackgroundCicle from "../components/structural/TopBackgroundCircle"
@@ -7,23 +8,10 @@ import EndCTA from "../components/pageComponents/EndCTA"
 
 import styled from "styled-components"
 
-const H2Styles = styled.h2`
-  text-align: center;
-  @media screen and (min-width: 1024px) {
-    text-align: left;
-  }
-`
-
-const HeaderH2Styles = styled(H2Styles)`
-  font-size: calc(var(--base-size) * 3);
-  @media screen and (min-width: 1024px) {
-    max-width: 550px;
-  }
-`
 const PricingColumnContainerStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--base-size);
+  grid-gap: calc(var(--base-size) * 2) 0;
   text-align: center;
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -38,7 +26,7 @@ export default function Pricing() {
       <TopBackgroundCicle>
         <Section>
           <HeroSection>
-            <HeaderH2Styles>Pricing</HeaderH2Styles>
+            <HeaderH2>Pricing</HeaderH2>
           </HeroSection>
         </Section>
         <Section>
@@ -56,7 +44,6 @@ export default function Pricing() {
                 { name: "Liabilities", checked: "" },
                 { name: "Income", checked: "" },
                 { name: "Request Access", checked: "" },
-                ,
               ]}
             />
             <PricingColumn
@@ -72,7 +59,6 @@ export default function Pricing() {
                 { name: "Liabilities", checked: "" },
                 { name: "Income", checked: "" },
                 { name: "Request Access", checked: "" },
-                ,
               ]}
             />
             <PricingColumn
@@ -88,7 +74,6 @@ export default function Pricing() {
                 { name: "Liabilities", checked: "checked" },
                 { name: "Income", checked: "checked" },
                 { name: "Request Access", checked: "checked" },
-                ,
               ]}
             />
           </PricingColumnContainerStyles>

@@ -1,19 +1,12 @@
 import React from "react"
 import P from "../structural/Paragraph"
+import H3Heading from "../structural/H3Heading"
 
 import styled from "styled-components"
 
 import checkmarkPink from "../../assets/images/checkmark-hot-pink.svg"
 
 const PricingColumnStyles = styled.div`
-  h3 {
-    font-family: "Libre Baskerville", serif;
-    font-weight: bold;
-    font-size: calc(var(--base-size) * 1.5);
-    color: var(--hot-pink);
-    margin-bottom: var(--base-size);
-  }
-
   h2,
   hr {
     margin-bottom: calc(var(--base-size) * 2);
@@ -23,6 +16,7 @@ const PricingColumnStyles = styled.div`
     width: 100%;
     max-width: 150px;
     margin: 0 auto;
+    text-align: left;
     @media screen and (min-width: 768px) {
       max-width: none;
     }
@@ -49,7 +43,7 @@ const PricingColumn = ({ title, columnDescription, price, features }) => {
   })
   return (
     <PricingColumnStyles>
-      <h3>{title}</h3>
+      <H3Heading color="#BA4270">{title}</H3Heading>
       <P>{columnDescription}</P>
       <h2>{price}</h2>
       <hr />

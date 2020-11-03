@@ -8,17 +8,22 @@ const ParagraphStyles = styled.p`
   }
   text-align: ${props => props.textAlign || "center"};
   line-height: 2;
-  margin-bottom: var(--base-size);
+  margin-bottom: ${props => props.marginBottom || "16px"};
   @media screen and (min-width: 768px) {
     text-align: left;
-    max-width: 450px;
-    margin-bottom: calc(var(--base-size) * 2);
+    max-width: ${props => props.maxWidth || "450px"};
+    margin-bottom: ${props => props.marginBottom || `"32px"`};
   }
 `
 
-const P = ({ children, color, textAlign }) => {
+const P = ({ children, color, textAlign, maxWidth, marginBottom }) => {
   return (
-    <ParagraphStyles className={color} textAlign={textAlign}>
+    <ParagraphStyles
+      className={color}
+      textAlign={textAlign}
+      maxWidth={maxWidth}
+      marginBottom={marginBottom}
+    >
       {children}
     </ParagraphStyles>
   )
