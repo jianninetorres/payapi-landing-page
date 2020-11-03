@@ -1,4 +1,5 @@
 import React from "react"
+import ReactDOM from "react-dom"
 import Layout from "./src/components/structural/Layout"
 
 export const wrapPageElement = ({ element, props }) => (
