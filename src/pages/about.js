@@ -8,6 +8,8 @@ import H3Heading from "../components/structural/H3Heading"
 import P from "../components/structural/Paragraph"
 import OneTwoThirdsPanel from "../components/structural/OneTwoThirdsPanel"
 import Image from "../components/structural/Image"
+import CompanyNumbers from "../components/pageComponents/CompanyNumbers"
+
 import TeamImage from "../assets/images/image-team-members.jpg"
 
 export default function About() {
@@ -58,6 +60,7 @@ export default function About() {
           marginTop={"32px"}
           marginBottom={"32px"}
         />
+        <CompanyNumbers />
         <Section>
           <OneTwoThirdsPanel>
             <div>
@@ -70,6 +73,20 @@ export default function About() {
                 offsites, internal hackathons, or co-worker meetups. We always
                 value cross-team collaboration and diversity of thought, no
                 matter the job title.
+              </P>
+            </div>
+          </OneTwoThirdsPanel>
+        </Section>
+        <Section>
+          <OneTwoThirdsPanel>
+            <div>
+              <H3Heading>The People</H3Heading>
+            </div>
+            <div>
+              <P maxWidth="620px" textAlign="left" marginBottom="0px">
+                We're all passionate about building a more efficient and
+                inclusive financial infrastructure together. At PayAPI, we have
+                diverse backgrounds and skills.
               </P>
             </div>
           </OneTwoThirdsPanel>

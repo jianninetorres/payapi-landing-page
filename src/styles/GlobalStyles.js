@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        font-size: var(--base-size);
+        font-size: calc(var(--base-size) * 1.125);
         font-family: 'Roboto Regular', sans-serif;
         box-sizing: border-box;
         color: var(--blue-grey)

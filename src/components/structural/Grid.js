@@ -6,8 +6,8 @@ const GridStyles = styled.div`
   display: grid;
 `
 
-const Grid = ({ children }) => {
-  return <GridStyles>{children}</GridStyles>
+const Grid = ({ children, gridColumns }) => {
+  return <GridStyles gridColumns={gridColumns}>{children}</GridStyles>
 }
 
 export default Grid
