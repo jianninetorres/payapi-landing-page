@@ -40,13 +40,13 @@ const FormStyles = styled.form`
     }
   }
 
-  .error {
+  .message {
     color: var(--hot-pink);
   }
 `
 
 class Form extends React.Component {
-  state = { userInput: "", email: "", error: "" }
+  state = { userInput: "", email: "", message: "" }
 
   handleInputChange = event => {
     const value = event.target.value
@@ -63,10 +63,10 @@ class Form extends React.Component {
         ? this.setState({
             email: this.state.userInput,
             userInput: "",
-            error: "",
+            message: "Thanks! We'll be in touch shortly.",
           })
         : this.setState({
-            error: "Please enter a valid email address.",
+            message: "Please enter a valid email address.",
           })
     }
   }
@@ -94,7 +94,7 @@ class Form extends React.Component {
             bgColor={this.props.bgColor}
           />
         </div>
-        {this.state.error && <div class="error">{this.state.error}</div>}
+        {this.state.message && <div class="message">{this.state.message}</div>}
       </FormStyles>
     )
   }

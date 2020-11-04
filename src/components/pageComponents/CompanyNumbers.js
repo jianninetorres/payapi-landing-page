@@ -53,20 +53,20 @@ const CompanyNumbersStyles = styled.div`
 const CompanyNumbers = () => {
   return (
     <CompanyNumbersStyles>
-      <div class="container">
-        <p class="title">Team Members</p>
+      <div className="container">
+        <p className="title">Team Members</p>
         <H3Heading color="#BA4270" fontSize="48px" marginBottom="0px">
           300+
         </H3Heading>
       </div>
-      <div class="container">
-        <p class="title">Offices in the US</p>
+      <div className="container">
+        <p className="title">Offices in the US</p>
         <H3Heading color="#BA4270" fontSize="48px" marginBottom="0px">
           3
         </H3Heading>
       </div>
-      <div class="container">
-        <p class="title">Transactions analyzed</p>
+      <div className="container">
+        <p className="title">Transactions analyzed</p>
         <H3Heading color="#BA4270" fontSize="48px" marginBottom="0px">
           10M+
         </H3Heading>
