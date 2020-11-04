@@ -17,3 +17,9 @@ Your users should be able to:
 - Receive an error message when the contact form is submitted if:
   - The `Name`, `Email Address` or `Message` fields are empty should show "This field can't be empty"
   - The `Email Address` is not formatted correctly should show "Please use a valid email address"
+
+### To build locally:
+
+1. Download repository
+2. In project directory, run `gatsby develop`
+3. Go to `http://localhost:8000/` in your browser.
