@@ -9,6 +9,7 @@ import P from "../components/structural/Paragraph"
 import OneTwoThirdsPanel from "../components/structural/OneTwoThirdsPanel"
 import Image from "../components/structural/Image"
 import CompanyNumbers from "../components/pageComponents/CompanyNumbers"
+import EndCTA from "../components/pageComponents/EndCTA"
 
 import TeamImage from "../assets/images/image-team-members.jpg"
 
@@ -91,6 +92,7 @@ export default function About() {
             </div>
           </OneTwoThirdsPanel>
         </Section>
+        <EndCTA title="Ready to start?" />
       </TopBackgroundCicle>
     </>
   )
