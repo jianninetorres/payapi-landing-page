@@ -36,7 +36,7 @@ const FormStyles = styled.form`
     @media screen and (min-width: 768px) {
       position: absolute;
       right: 0;
-      max-width: 200px;
+      max-width: 250px;
     }
   }
 
