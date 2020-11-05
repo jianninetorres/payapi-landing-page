@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
+import NavLinks from "../../data/NavLinks"
+
 import styled from "styled-components"
 import logo from "../../assets/images/logo.svg"
 import menu from "../../assets/images/menu.svg"
@@ -130,9 +132,8 @@ const NavStyles = styled.nav`
     }
   }
 `
-
 const Nav = () => {
-  const [toggleNav, setToggleNav] = useState("list-container")
+  const [navState, setNavState] = useState("list-container")
   const [navColor, setNavColor] = useState("transparent")
   const [navBottomBorder, setNavBottomBorder] = useState("none")
 
@@ -142,6 +143,10 @@ const Nav = () => {
 
   useEffect(() => {
     let mql = window.matchMedia("(min-width: 1024px)")
+    window.addEventListener("", () => {
+      console.log(document.location.pathname)
+    })
+
     window.addEventListener("scroll", () => {
       if (mql.matches && window.scrollY > 0) {
         setNavColor(white)
@@ -153,51 +158,101 @@ const Nav = () => {
     })
   })
 
-  const onClickNav = () => {
-    return toggleNav === "list-container"
-      ? setToggleNav("list-container--visible")
-      : setToggleNav("list-container")
+  const toggleNav = () => {
+    return navState === "list-container"
+      ? setNavState("list-container--visible")
+      : setNavState("list-container")
+  }
+
+  const onClickLinkOnMobile = () => {
+    let mql = window.matchMedia("(max-width: 1023px)")
+    if (mql.matches) {
+      toggleNav()
+    }
   }
 
   const onEnter = e => {
     if (e.keyCode === 13) {
-      onClickNav()
+      toggleNav()
     }
+  }
+
+  const LinkHome = () => {
+    let mql = window.matchMedia("(max-width: 1023px)")
+    if (mql.matches) {
+      return (
+        <li
+          className="list-container__item"
+          onClick={onClickLinkOnMobile}
+          onKeyUp={onClickLinkOnMobile}
+        >
+          <Link to={NavLinks.home.url}>{NavLinks.home.name}</Link>
+        </li>
+      )
+    }
+    return ""
+  }
+
+  const LogoLinkHome = () => {
+    let mql = window.matchMedia("(min-width: 1024px)")
+    const home = mql.matches ? (
+      <Link to="/">
+        <div
+          className="logo"
+          role="button"
+          aria-label="home"
+          tabIndex={0}
+        ></div>
+      </Link>
+    ) : (
+      <div className="logo" role="button" aria-label="home" tabIndex={0}></div>
+    )
+    return home
   }
 
   return (
     <NavStyles bgColor={navColor} navBottomBorder={navBottomBorder}>
       <div className="nav-wrapper">
         <div className="links-container">
-          <Link to="/">
-            <div
-              className="logo"
-              role="button"
-              aria-label="home"
-              tabIndex={0}
-            ></div>
-          </Link>
+          <LogoLinkHome />
           <div
             className="menu-burger"
-            onClick={onClickNav}
+            onClick={toggleNav}
             onKeyUp={onEnter}
             role="button"
             aria-label="menu"
             tabIndex={0}
           ></div>
         </div>
-        <ul className={toggleNav}>
-          <li className="list-container__item">
-            <Link to="/pricing">Pricing</Link>
+        <ul className={navState}>
+          <LinkHome />
+          <li
+            className="list-container__item"
+            onClick={onClickLinkOnMobile}
+            onKeyUp={onClickLinkOnMobile}
+          >
+            <Link to={NavLinks.pricing.url}>{NavLinks.pricing.name}</Link>
           </li>
-          <li className="list-container__item">
-            <Link to="/about">About</Link>
+          <li
+            className="list-container__item"
+            onClick={onClickLinkOnMobile}
+            onKeyUp={onClickLinkOnMobile}
+          >
+            <Link to={NavLinks.about.url}>{NavLinks.about.name}</Link>
           </li>
-          <li className="list-container__item">
-            <Link to="/contact">Contact</Link>
+          <li
+            className="list-container__item"
+            onClick={onClickLinkOnMobile}
+            onKeyUp={onClickLinkOnMobile}
+          >
+            <Link to={NavLinks.contact.url}>{NavLinks.contact.name}</Link>
           </li>
-          <li className="list-container__item list-container__item--button">
-            <Link to="/demo">Schedule a Demo</Link>
+          <li
+            className="list-container__item list-container__item--button"
+            onClick={onClickLinkOnMobile}
+            onKeyUp={onClickLinkOnMobile}
+          >
+            <Link to={NavLinks.demo.url}>{NavLinks.demo.name}</Link>
           </li>
         </ul>
       </div>
