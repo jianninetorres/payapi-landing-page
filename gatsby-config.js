@@ -6,6 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  assetPrefix: `https://jianninetorres.com`,
   pathPrefix: `/pay-api`,
   plugins: [
     {
