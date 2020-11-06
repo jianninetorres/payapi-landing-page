@@ -6,6 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: `/pay-api`,
   plugins: [
     {
       resolve: `gatsby-plugin-sharp`,
