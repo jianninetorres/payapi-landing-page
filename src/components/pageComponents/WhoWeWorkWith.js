@@ -47,7 +47,7 @@ const WhoWeWorkWith = () => {
               provide developers with the tools they need to create easy and
               accessible experiences for their users.
             </P>
-            <Button type="button" text="About us" bgColor="blue-black" />
+            <Button type="button" text="About us" bgColor="transparent-white" />
           </PanelDescription>
         </HalfPanel>
       </Section>

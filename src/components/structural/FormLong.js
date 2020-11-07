@@ -1,10 +1,13 @@
 import React, { Component } from "react"
+import Button from "../structural/Button"
+
 import styled from "styled-components"
 
 const FormLongStyles = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 
   label:not([for="checkbox"]) {
     // hide label visually but keep them available to screen reader and other assistive technology
@@ -30,6 +33,7 @@ const FormLongStyles = styled.form`
   .checkbox-container {
     display: flex;
     align-items: center;
+    margin: var(--base-size) 0;
   }
 
   input[type="checkbox"] {
@@ -92,8 +96,12 @@ class FormLong extends Component {
             Stay up-to-date with company announcements and updates to our API
           </label>
         </div>
-        <button type="submit">Send</button>
-        <input type="reset" value="Clear" />
+        <Button
+          type="submit"
+          text="Submit"
+          bgColor="transparent-blue-grey"
+          alignSelf="flex-start"
+        />
       </FormLongStyles>
     )
   }
