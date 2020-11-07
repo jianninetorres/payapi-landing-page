@@ -1,6 +1,6 @@
 import React from "react"
 import Button from "./Button"
-import Input from "./Input"
+import { emailRegex } from "../../assets/ts/utils"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
@@ -58,9 +58,9 @@ class Form extends React.Component {
 
   onHandleSubmit = event => {
     event.preventDefault()
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.userInput)
+    const isEmailValid = emailRegex(this.state.userInput)
     if (this.state.userInput !== "") {
-      emailRegex
+      isEmailValid
         ? this.setState({
             email: this.state.userInput,
             userInput: "",
