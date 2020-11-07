@@ -1,5 +1,6 @@
 import React from "react"
 import Button from "./Button"
+import Input from "./Input"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
@@ -80,13 +81,13 @@ class Form extends React.Component {
       <FormStyles onSubmit={this.onHandleSubmit}>
         {this.showFormTitle()}
         <div>
-          <input
+          <Input
             type="text"
             placeholder={this.props.placeholder}
             name="email"
             value={this.state.userInput}
             onChange={this.handleInputChange}
-            required
+            id="email-form"
           />
           <Button
             type="submit"
