@@ -81,7 +81,7 @@ class Form extends React.Component {
       <FormStyles onSubmit={this.onHandleSubmit}>
         {this.showFormTitle()}
         <div>
-          <Input
+          <input
             type="text"
             placeholder={this.props.placeholder}
             name="email"
@@ -95,7 +95,9 @@ class Form extends React.Component {
             bgColor={this.props.bgColor}
           />
         </div>
-        {this.state.message && <div class="message">{this.state.message}</div>}
+        {this.state.message && (
+          <div className="message">{this.state.message}</div>
+        )}
       </FormStyles>
     )
   }
