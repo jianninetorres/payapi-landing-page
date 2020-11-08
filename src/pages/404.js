@@ -6,10 +6,10 @@ import Section from "../components/structural/Section"
 import HeaderH2 from "../components/structural/HeaderH2"
 
 const Page404ContainerStyles = styled.div`
-  padding: calc(var(--base-size) * 7) var(--base-size);
+  padding: calc(var(--base-size) * 7) 0;
 `
 
-const page404 = () => {
+const PageNotFound = () => {
   return (
     <Page404ContainerStyles>
       <Section>
@@ -19,4 +19,4 @@ const page404 = () => {
   )
 }
 
-export default page404
+export default PageNotFound
