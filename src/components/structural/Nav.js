@@ -193,13 +193,19 @@ const Nav = () => {
         </div>
         <ul className={toggleNav}>
           <li className="list-container__item">
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/pricing" activeStyle={{ color: `var(--hot-pink)` }}>
+              Pricing
+            </Link>
           </li>
           <li className="list-container__item">
-            <Link to="/about">About</Link>
+            <Link to="/about" activeStyle={{ color: `var(--hot-pink)` }}>
+              About
+            </Link>
           </li>
           <li className="list-container__item">
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" activeStyle={{ color: `var(--hot-pink)` }}>
+              Contact
+            </Link>
           </li>
           <li className="list-container__item list-container__item--button">
             <Link to="/demo">Schedule a Demo</Link>
