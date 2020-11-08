@@ -25,7 +25,7 @@ const H1Styles = styled.h1`
   }
 `
 
-const EndCTA = ({ title }) => {
+const EndCTA = ({ title, alignForm }) => {
   return (
     <Section>
       <EndCTAStyles>
@@ -37,6 +37,7 @@ const EndCTA = ({ title }) => {
             placeholder="Enter email address"
             buttonText="Schedule a Demo"
             bgColor="hot-pink"
+            alignForm={alignForm}
           />
         </ContainerStyles>
       </EndCTAStyles>

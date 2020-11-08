@@ -8,6 +8,7 @@ import HeroSection from "../components/structural/HeroSection"
 import HeaderH2 from "../components/structural/HeaderH2"
 import FormLong from "../components/structural/FormLong"
 import CompaniesGrid from "../components/pageComponents/CompaniesGrid"
+import EndCTA from "../components/pageComponents/EndCTA"
 
 export default function Contact() {
   return (
@@ -33,6 +34,7 @@ export default function Contact() {
             </PanelDescription>
           </HalfPanel>
         </Section>
+        <EndCTA title="Ready to start?" alignForm="flex-end" />
       </TopBackgroundCicle>
     </>
   )

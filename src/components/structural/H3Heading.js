@@ -5,7 +5,7 @@ import styled from "styled-components"
 const HeadingStyles = styled.h3`
   font-family: "Libre Baskerville", serif;
   font-weight: bold;
-  font-size: ${props => props.fontSize || "36px"};
+  font-size: ${props => props.fontSize || "30px"};
   color: ${props => props.color || `var(--blue-grey)`};
   margin-bottom: ${props => props.marginBottom || "32px"};
   text-align: center;

@@ -7,6 +7,7 @@ const FormStyles = styled.form`
   width: 100%;
   @media screen and (min-width: 1024px) {
     max-width: 500px;
+    align-self: ${props => props.alignForm || "flex-start"};
   }
   text-align: center;
 
@@ -78,7 +79,10 @@ class Form extends React.Component {
 
   render() {
     return (
-      <FormStyles onSubmit={this.onHandleSubmit}>
+      <FormStyles
+        onSubmit={this.onHandleSubmit}
+        alignForm={this.props.alignForm}
+      >
         {this.showFormTitle()}
         <div>
           <input
