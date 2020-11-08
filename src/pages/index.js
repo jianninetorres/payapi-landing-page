@@ -59,7 +59,7 @@ export default function Home() {
         </HalfPanel>
       </Section>
       <FeaturesGrid />
-      <EndCTA title="Ready to start?" />
+      <EndCTA title="Ready to start?" alignForm="flex-end" />
     </>
   )
 }
