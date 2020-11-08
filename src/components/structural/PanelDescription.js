@@ -9,10 +9,8 @@ const PanelDescriptionStyles = styled.section`
   align-items: center;
   width: 100%;
   flex-basis: 600px;
-  padding-top: calc(var(--base-size) * 2);
   @media screen and (min-width: 768px) {
     align-items: flex-start;
-    padding: 0 var(--base-size);
   }
   &.left {
     @media screen and (min-width: 768px) {

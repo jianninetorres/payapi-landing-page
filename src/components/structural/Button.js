@@ -9,17 +9,28 @@ const ButtonStyles = styled.button`
   color: white;
   padding: 0 calc(var(--base-size) * 2);
   transition: all 0.2s ease;
+  align-self: ${props => props.alignSelf || "initial"};
 
   &:hover {
     transition: all 0.2s ease;
   }
 
-  &.blue-black {
+  &.transparent-white {
     border: 2px solid var(--white);
     background-color: var(--transparent);
     &:hover {
       background-color: white;
       color: var(--blue-black);
+    }
+  }
+
+  &.transparent-blue-grey {
+    border: 2px solid var(--blue-grey);
+    background-color: var(--transparent);
+    color: var(--blue-grey);
+    &:hover {
+      background-color: var(--blue-grey);
+      color: var(--white);
     }
   }
 
@@ -35,9 +46,9 @@ const ButtonStyles = styled.button`
   }
 `
 
-const Button = ({ type, text, bgColor }) => {
+const Button = ({ type, text, bgColor, alignSelf }) => {
   return (
-    <ButtonStyles type={type} className={bgColor}>
+    <ButtonStyles type={type} className={bgColor} alignSelf={alignSelf}>
       {text}
     </ButtonStyles>
   )

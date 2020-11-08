@@ -1,11 +1,13 @@
 import React from "react"
 import Button from "./Button"
+import { emailRegex } from "../../assets/ts/utils"
 import styled from "styled-components"
 
 const FormStyles = styled.form`
   width: 100%;
   @media screen and (min-width: 1024px) {
     max-width: 500px;
+    align-self: ${props => props.alignForm || "flex-start"};
   }
   text-align: center;
 
@@ -57,9 +59,9 @@ class Form extends React.Component {
 
   onHandleSubmit = event => {
     event.preventDefault()
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.userInput)
+    const isEmailValid = emailRegex(this.state.userInput)
     if (this.state.userInput !== "") {
-      emailRegex
+      isEmailValid
         ? this.setState({
             email: this.state.userInput,
             userInput: "",
@@ -77,7 +79,10 @@ class Form extends React.Component {
 
   render() {
     return (
-      <FormStyles onSubmit={this.onHandleSubmit}>
+      <FormStyles
+        onSubmit={this.onHandleSubmit}
+        alignForm={this.props.alignForm}
+      >
         {this.showFormTitle()}
         <div>
           <input
@@ -86,7 +91,7 @@ class Form extends React.Component {
             name="email"
             value={this.state.userInput}
             onChange={this.handleInputChange}
-            required
+            id="email-form"
           />
           <Button
             type="submit"
@@ -94,7 +99,9 @@ class Form extends React.Component {
             bgColor={this.props.bgColor}
           />
         </div>
-        {this.state.message && <div class="message">{this.state.message}</div>}
+        {this.state.message && (
+          <div className="message">{this.state.message}</div>
+        )}
       </FormStyles>
     )
   }
