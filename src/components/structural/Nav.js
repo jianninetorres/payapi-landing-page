@@ -145,9 +145,11 @@ const Nav = () => {
   const white = "#FFFFFF"
   const lightGrey = "#CFD8E1"
   const transparent = "transparent"
+  const mobile = "(max-width: 1023px)"
+  const tablet = "(min-width: 1024px)"
 
   useEffect(() => {
-    let mql = window.matchMedia("(min-width: 1024px)")
+    let mql = window.matchMedia(tablet)
     window.addEventListener("scroll", () => {
       if (mql.matches && window.scrollY > 0) {
         setNavColor(white)
@@ -166,7 +168,8 @@ const Nav = () => {
   }
 
   const onClickLinkOnMobile = () => {
-    let mql = window.matchMedia("(max-width: 1023px)")
+    // prevent links from toggling dropdown on desktop
+    let mql = window.matchMedia(mobile)
     if (mql.matches) {
       toggleNav()
     }
@@ -179,24 +182,24 @@ const Nav = () => {
   }
 
   const LinkHome = () => {
-    let mql = window.matchMedia("(max-width: 1023px)")
-    if (mql.matches) {
-      return (
-        <li
-          className="list-container__item"
-          onClick={onClickLinkOnMobile}
-          onKeyUp={onClickLinkOnMobile}
-        >
-          <Link to={NavLinks.home.url}>{NavLinks.home.name}</Link>
-        </li>
-      )
-    }
-    return ""
+    let mql = window.matchMedia(mobile)
+    const homeLink = mql.matches ? (
+      <li
+        className="list-container__item"
+        onClick={onClickLinkOnMobile}
+        onKeyUp={onClickLinkOnMobile}
+      >
+        <Link to={NavLinks.home.url}>{NavLinks.home.name}</Link>
+      </li>
+    ) : (
+      ""
+    )
+    return homeLink
   }
 
   const LogoLinkHome = () => {
-    let mql = window.matchMedia("(min-width: 1024px)")
-    const home = mql.matches ? (
+    let mql = window.matchMedia(tablet)
+    const logoLink = mql.matches ? (
       <Link to="/">
         <div
           className="logo"
@@ -208,7 +211,7 @@ const Nav = () => {
     ) : (
       <div className="logo" role="button" aria-label="home" tabIndex={0}></div>
     )
-    return home
+    return logoLink
   }
 
   return (
