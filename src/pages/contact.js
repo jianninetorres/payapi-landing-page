@@ -7,6 +7,7 @@ import PanelDescription from "../components/structural/PanelDescription"
 import HeroSection from "../components/structural/HeroSection"
 import HeaderH2 from "../components/structural/HeaderH2"
 import FormLong from "../components/structural/FormLong"
+import CompaniesGrid from "../components/pageComponents/CompaniesGrid"
 
 export default function Contact() {
   return (
@@ -23,6 +24,12 @@ export default function Contact() {
           <HalfPanel>
             <PanelDescription>
               <FormLong />
+            </PanelDescription>
+            <PanelDescription>
+              <CompaniesGrid
+                color="dark"
+                title="Join the thousands of innovators already banking with us"
+              />
             </PanelDescription>
           </HalfPanel>
         </Section>

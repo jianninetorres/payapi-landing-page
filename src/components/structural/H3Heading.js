@@ -5,9 +5,13 @@ import styled from "styled-components"
 const HeadingStyles = styled.h3`
   font-family: "Libre Baskerville", serif;
   font-weight: bold;
-  font-size: ${props => props.fontSize || "24px"};
+  font-size: ${props => props.fontSize || "36px"};
   color: ${props => props.color || `var(--blue-grey)`};
-  margin-bottom: ${props => props.marginBottom || "16px"};
+  margin-bottom: ${props => props.marginBottom || "32px"};
+  text-align: center;
+  @media screen and (min-width: 1024px) {
+    text-align: left;
+  }
 `
 
 const H3Heading = ({ children, color, fontSize, marginBottom }) => {
