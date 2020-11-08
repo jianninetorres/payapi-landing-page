@@ -15,6 +15,8 @@ const NavStyles = styled.nav`
     background-color: ${props => props.bgColor};
     transition: background-color 0.2s ease;
     border-bottom: 1px solid ${props => props.navBottomBorder};
+    padding-left: calc(var(--base-size) * 4);
+    padding-right: calc(var(--base-size) * 4);
   }
 
   .nav-wrapper {
@@ -40,7 +42,7 @@ const NavStyles = styled.nav`
     display: none;
     @media screen and (min-width: 1024px) {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       flex: 1 1 auto;
     }
   }
@@ -64,6 +66,9 @@ const NavStyles = styled.nav`
 
     @media screen and (min-width: 1024px) {
       margin: 0;
+      &:not(last-child) {
+        margin: 0 var(--base-size);
+      }
     }
 
     &--button {
