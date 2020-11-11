@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Button from "../structural/Button"
+import { emailRegex } from "../../assets/ts/utils"
 
 import styled from "styled-components"
 
@@ -9,17 +10,17 @@ const FormLongStyles = styled.form`
   justify-content: center;
   width: 100%;
 
-  label:not([for="checkbox"]) {
-    // hide label visually but keep them available to screen reader and other assistive technology
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+  // label:not([for="checkbox"]) {
+  //   // hide label visually but keep them available to screen reader and other assistive technology
+  //   border: 0;
+  //   clip: rect(0 0 0 0);
+  //   height: 1px;
+  //   margin: -1px;
+  //   overflow: hidden;
+  //   padding: 0;
+  //   position: absolute;
+  //   width: 1px;
+  // }
 
   input:not([type="reset"]),
   textarea {
@@ -39,10 +40,22 @@ const FormLongStyles = styled.form`
   input[type="checkbox"] {
     margin-right: calc(var(--base-size) / 2);
   }
+
+  .message {
+    color: var(--hot-pink);
+    font-weight: 600;
+  }
 `
 
 class FormLong extends Component {
-  state = { name: "", email: "", subject: "", message: "" }
+  state = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    checkbox: false,
+    validationMessage: "",
+  }
 
   handleInputChange = event => {
     const value = event.target.value
@@ -51,15 +64,38 @@ class FormLong extends Component {
     })
   }
 
+  onHandleCheckbox = event => {
+    this.setState({ checkbox: event.target.checked })
+  }
+
+  onHandleSubmit = event => {
+    event.preventDefault()
+    const isEmailValid = emailRegex(this.state.email)
+    const { name, email, subject, message } = this.state
+    if (name !== "" && email !== "" && subject !== "" && message !== "") {
+      isEmailValid
+        ? this.setState({
+            [event.target.name]: event.target.value,
+            validationMessage: "Thanks! We'll get in touch with you soon.",
+          })
+        : this.setState({
+            validationMessage: `Please enter a valid email address.`,
+          })
+    } else {
+      this.setState({
+        validationMessage: `Please ensure all fields are filled correctly.`,
+      })
+    }
+  }
+
   render() {
     return (
-      <FormLongStyles method="post" action="#">
-        <label htmlFor="name">Name</label>
+      <FormLongStyles method="post" action="#" onSubmit={this.onHandleSubmit}>
+        <label htmlFor="name">First and Last Name</label>
         <input
           type="text"
           name="name"
           id="name"
-          placeholder="Name"
           value={this.state.name}
           onChange={this.handleInputChange}
         />
@@ -68,7 +104,6 @@ class FormLong extends Component {
           type="email"
           name="email"
           id="email"
-          placeholder="Email address"
           value={this.state.email}
           onChange={this.handleInputChange}
         />
@@ -77,7 +112,6 @@ class FormLong extends Component {
           type="text"
           name="subject"
           id="subject"
-          placeholder="Subject"
           value={this.state.subject}
           onChange={this.handleInputChange}
         />
@@ -86,12 +120,18 @@ class FormLong extends Component {
           name="message"
           id="message"
           rows="5"
-          placeholder="Your message"
           value={this.state.message}
           onChange={this.handleInputChange}
         />
+        {this.state.validationMessage && (
+          <div className="message">{this.state.validationMessage}</div>
+        )}
         <div className="checkbox-container">
-          <input type="checkbox" name="checkbox" />
+          <input
+            type="checkbox"
+            name="checkbox"
+            onChange={this.onHandleCheckbox}
+          />
           <label htmlFor="checkbox">
             Stay up-to-date with company announcements and updates to our API
           </label>
