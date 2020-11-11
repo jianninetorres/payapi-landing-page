@@ -72,10 +72,15 @@ class FormLong extends Component {
     event.preventDefault()
     const isEmailValid = emailRegex(this.state.email)
     const { name, email, subject, message } = this.state
-    if (name !== "" && email !== "" && subject !== "" && message !== "") {
+    if (name && email && subject && message) {
       isEmailValid
-        ? this.setState({
-            [event.target.name]: event.target.value,
+        ? // --- send form data to a server -- //
+          // --- then clear form --- //
+          this.setState({
+            name: " ",
+            email: " ",
+            subject: " ",
+            message: " ",
             validationMessage: "Thanks! We'll get in touch with you soon.",
           })
         : this.setState({
