@@ -76,7 +76,6 @@ const NavStyles = styled.nav`
       @media screen and (min-width: 1024px) {
         display: flex;
         background-color: var(--hot-pink);
-        padding: 0 calc(var(--base-size) * 2);
         height: calc(var(--base-size) * 4);
         border-radius: calc(var(--base-size) * 2);
         cursor: pointer;
@@ -87,6 +86,12 @@ const NavStyles = styled.nav`
 
         > a {
           color: var(--white);
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 calc(var(--base-size) * 2);
+          height: 100%;
           &:hover,
           &:visited {
             color: var(--white);
@@ -229,7 +234,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="list-container__item list-container__item--button">
-            <Link to="/demo">Schedule a Demo</Link>
+            <Link to="/contact">Schedule a Demo</Link>
           </li>
         </ul>
       </div>
