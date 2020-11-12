@@ -159,6 +159,14 @@ const Nav = () => {
 
   useEffect(() => {
     let mql = window.matchMedia("(min-width: 1024px)")
+    let windowPageYOffset =
+      window.pageYOffset || document.documentElement.scrollTop
+
+    if (windowPageYOffset > 0) {
+      setNavColor(white)
+      setNavBottomBorder(lightGrey)
+    }
+
     window.addEventListener("scroll", () => {
       if (mql.matches && window.scrollY > 0) {
         setNavColor(white)
