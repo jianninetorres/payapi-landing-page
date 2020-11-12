@@ -71,6 +71,12 @@ const NavStyles = styled.nav`
       }
     }
 
+    &--home {
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+
     &--button {
       display: none;
       @media screen and (min-width: 1024px) {
@@ -206,6 +212,15 @@ const Nav = () => {
           ></div>
         </div>
         <ul className={toggleNav}>
+          <li className="list-container__item list-container__item--home">
+            <Link
+              to="/"
+              activeStyle={{ color: `var(--hot-pink)` }}
+              onClick={onClickNav}
+            >
+              Home
+            </Link>
+          </li>
           <li className="list-container__item">
             <Link
               to="/pricing"
