@@ -15,7 +15,7 @@ const PricingColumnContainerStyles = styled.div`
   text-align: center;
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: calc(var(--base-size) * 2);
+    grid-gap: calc(var(--base-size) * 2) calc(var(--base-size) - 6px);
     text-align: left;
   }
 `
