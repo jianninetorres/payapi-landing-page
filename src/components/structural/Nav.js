@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 
 import styled from "styled-components"
@@ -140,6 +140,7 @@ const Nav = () => {
   const [toggleNav, setToggleNav] = useState("list-container")
   const [navColor, setNavColor] = useState("transparent")
   const [navBottomBorder, setNavBottomBorder] = useState("none")
+  const navRef = useRef(null)
 
   const white = "#FFFFFF"
   const lightGrey = "#CFD8E1"
@@ -159,9 +160,13 @@ const Nav = () => {
   })
 
   const onClickNav = () => {
-    return toggleNav === "list-container"
-      ? setToggleNav("list-container--visible")
-      : setToggleNav("list-container")
+    let viewport = navRef.current.scrollWidth
+    if (viewport < 1024) {
+      setToggleNav("list-container")
+      return toggleNav === "list-container"
+        ? setToggleNav("list-container--visible")
+        : setToggleNav("list-container")
+    }
   }
 
   const onEnter = e => {
@@ -171,7 +176,11 @@ const Nav = () => {
   }
 
   return (
-    <NavStyles bgColor={navColor} navBottomBorder={navBottomBorder}>
+    <NavStyles
+      bgColor={navColor}
+      navBottomBorder={navBottomBorder}
+      ref={navRef}
+    >
       <div className="nav-wrapper">
         <div className="links-container">
           <Link to="/">
@@ -193,17 +202,29 @@ const Nav = () => {
         </div>
         <ul className={toggleNav}>
           <li className="list-container__item">
-            <Link to="/pricing" activeStyle={{ color: `var(--hot-pink)` }}>
+            <Link
+              to="/pricing"
+              activeStyle={{ color: `var(--hot-pink)` }}
+              onClick={onClickNav}
+            >
               Pricing
             </Link>
           </li>
           <li className="list-container__item">
-            <Link to="/about" activeStyle={{ color: `var(--hot-pink)` }}>
+            <Link
+              to="/about"
+              activeStyle={{ color: `var(--hot-pink)` }}
+              onClick={onClickNav}
+            >
               About
             </Link>
           </li>
           <li className="list-container__item">
-            <Link to="/contact" activeStyle={{ color: `var(--hot-pink)` }}>
+            <Link
+              to="/contact"
+              activeStyle={{ color: `var(--hot-pink)` }}
+              onClick={onClickNav}
+            >
               Contact
             </Link>
           </li>
