@@ -33,7 +33,13 @@ const PricingColumnStyles = styled.div`
   }
 `
 
-const PricingColumn = ({ title, columnDescription, price, features }) => {
+const PricingColumn = ({
+  children,
+  title,
+  columnDescription,
+  price,
+  features,
+}) => {
   const listFeatures = features.map(feature => {
     return (
       <li key={feature.name} className={feature.checked}>
@@ -48,6 +54,7 @@ const PricingColumn = ({ title, columnDescription, price, features }) => {
       <h2>{price}</h2>
       <hr />
       <ul>{listFeatures}</ul>
+      {children}
     </PricingColumnStyles>
   )
 }

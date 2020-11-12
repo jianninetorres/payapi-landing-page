@@ -2,6 +2,7 @@ import React from "react"
 import HeroSection from "../components/structural/HeroSection"
 import HeaderH2 from "../components/structural/HeaderH2"
 import PricingColumn from "../components/structural/PricingColumn"
+import Button from "../components/structural/Button"
 import Section from "../components/structural/Section"
 import TopBackgroundCicle from "../components/structural/TopBackgroundCircle"
 import EndCTA from "../components/pageComponents/EndCTA"
@@ -17,6 +18,9 @@ const PricingColumnContainerStyles = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-gap: calc(var(--base-size) * 2) calc(var(--base-size) - 6px);
     text-align: left;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-gap: calc(var(--base-size) * 2) calc(var(--base-size) * 3);
   }
 `
 
@@ -43,9 +47,15 @@ export default function Pricing() {
                 { name: "Assets", checked: "" },
                 { name: "Liabilities", checked: "" },
                 { name: "Income", checked: "" },
-                { name: "Request Access", checked: "" },
               ]}
-            />
+            >
+              <Button
+                type="button"
+                text="Request access"
+                bgColor="transparent-blue-grey"
+                alignSelf="flex-start"
+              />
+            </PricingColumn>
             <PricingColumn
               title="Basic Plan"
               columnDescription="Launch your project with unlimited requests and no contractual minimums"
@@ -58,9 +68,15 @@ export default function Pricing() {
                 { name: "Assets", checked: "checked" },
                 { name: "Liabilities", checked: "" },
                 { name: "Income", checked: "" },
-                { name: "Request Access", checked: "" },
               ]}
-            />
+            >
+              <Button
+                type="button"
+                text="Request access"
+                bgColor="transparent-blue-grey"
+                alignSelf="flex-start"
+              />
+            </PricingColumn>
             <PricingColumn
               title="Premium Plan"
               columnDescription="Get tailored solutions, volume pricing, and dedicated support for your team"
@@ -73,9 +89,15 @@ export default function Pricing() {
                 { name: "Assets", checked: "checked" },
                 { name: "Liabilities", checked: "checked" },
                 { name: "Income", checked: "checked" },
-                { name: "Request Access", checked: "checked" },
               ]}
-            />
+            >
+              <Button
+                type="button"
+                text="Request access"
+                bgColor="transparent-blue-grey"
+                alignSelf="flex-start"
+              />
+            </PricingColumn>
           </PricingColumnContainerStyles>
         </Section>
         <EndCTA title="Ready to start?" />
