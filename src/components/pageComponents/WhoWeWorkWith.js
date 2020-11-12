@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import styled from "styled-components"
 
@@ -9,7 +10,6 @@ import HalfPanel from "../../components/structural/HalfPanel"
 import CompaniesGrid from "../../components/pageComponents/CompaniesGrid"
 import PanelDescription from "../../components/structural/PanelDescription"
 import P from "../../components/structural/Paragraph"
-import Button from "../../components/structural/Button"
 
 const WhoWeWorkWithStyles = styled.section`
   background: url(${bgCircle}) no-repeat center 100px;
@@ -22,6 +22,32 @@ const WhoWeWorkWithStyles = styled.section`
   @media screen and (min-width: 1200px) {
     background-size: auto;
     background-position: calc(50% - 650px) 100%;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: ${props => props.alignSelf || "initial"};
+    color: white;
+    border-radius: calc(var(--base-size) * 2);
+    margin: calc(var(--base-size) / 2) 0;
+    height: calc(var(--base-size) * 4);
+    text-decoration: none;
+    padding: 0 calc(var(--base-size) * 2);
+    transition: all 0.2s ease;
+    &:hover {
+      transition: all 0.2s ease;
+    }
+
+    &.transparent-white {
+      border: 2px solid var(--white);
+      background-color: var(--transparent);
+      &:hover {
+        background-color: white;
+        color: var(--blue-black);
+      }
+    }
   }
 `
 
@@ -47,7 +73,9 @@ const WhoWeWorkWith = () => {
               provide developers with the tools they need to create easy and
               accessible experiences for their users.
             </P>
-            <Button type="button" text="About us" bgColor="transparent-white" />
+            <Link to="/about" className="transparent-white">
+              About us
+            </Link>
           </PanelDescription>
         </HalfPanel>
       </Section>
