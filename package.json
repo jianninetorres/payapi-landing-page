@@ -11,12 +11,14 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
     "gatsby": "^2.24.85",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-manifest": "^2.4.37",
+    "gatsby-plugin-preload-fonts": "^1.2.30",
     "gatsby-plugin-sharp": "^2.6.43",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

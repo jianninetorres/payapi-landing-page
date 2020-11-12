@@ -8,6 +8,13 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      resolve: `gatsby-plugin-preload-fonts`,
+      options: {
+        crossOrigin: pathname =>
+          pathname.match(/^\/elevated/) ? `use-credentials` : `anonymous`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         // Available options and their defaults:
