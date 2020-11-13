@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "pay-api-marketing-site",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
+  "description": "Multi-page marketing site for payAPI built with Gatsby",
+  "version": "1.0.2",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -29,9 +29,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "git+https://github.com/jianninetorres/payapi-landing-page.git"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "homepage": "https://payapi-landing-page.jianninetorres.vercel.app/",
+  "main": "gatsby-browser.js",
+  "keywords": [
+    "payapi",
+    "gatsby",
+    "marketing",
+    "site"
+  ],
+  "author": "Jiannine Torres"
 }
