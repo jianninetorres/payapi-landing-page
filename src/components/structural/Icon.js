@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 const IconStyles = styled.img`
-  width: auto;
+  width: 100%;
 `
 
 const Icon = ({ image, alt }) => {
