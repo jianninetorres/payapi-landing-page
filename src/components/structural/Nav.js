@@ -176,7 +176,7 @@ const Nav = () => {
         setNavBottomBorder("none")
       }
     })
-  })
+  }, [])
 
   const onClickNav = () => {
     let viewport = navRef.current.scrollWidth
