@@ -40,7 +40,11 @@ const FeaturesGrid = () => {
     <Section>
       <FeaturesGridStyles>
         <FeaturesContainer>
-          <Icon image={iconPersonalFinances} alt="Personal finances" />
+          <Icon
+            image={iconPersonalFinances}
+            alt="Personal finances"
+            width="auto"
+          />
           <H3Styles>Personal Finances</H3Styles>
           <ParagraphStyles>
             Consolidate financial data from multiple sources and categorize
@@ -49,7 +53,7 @@ const FeaturesGrid = () => {
           </ParagraphStyles>
         </FeaturesContainer>
         <FeaturesContainer>
-          <Icon image={iconBanking} alt="Banking icon" />
+          <Icon image={iconBanking} alt="Banking icon" width="auto" />
           <H3Styles>Banking & Coverage</H3Styles>
           <ParagraphStyles>
             With our platform, you can speed up account onboarding and support
@@ -58,7 +62,11 @@ const FeaturesGrid = () => {
           </ParagraphStyles>
         </FeaturesContainer>
         <FeaturesContainer>
-          <Icon image={iconConsumerPayments} alt="Consumer payments icon" />
+          <Icon
+            image={iconConsumerPayments}
+            alt="Consumer payments icon"
+            width="auto"
+          />
           <H3Styles>Consumer Payments</H3Styles>
           <ParagraphStyles>
             It’s easier to set up secure bank payments with us through a flow
