@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
     h1, h2 {
         font-family: "Libre Baskerville", serif;
         font-weight: bold;
+        line-height: 1.2;
     }
 
     h1 {
