@@ -19,6 +19,7 @@ const ContainerStyles = styled.div`
 `
 
 const H1Styles = styled.h1`
+  color: var(--blue-grey);
   text-align: center;
   @media screen and (min-width: 1024px) {
     text-align: left;

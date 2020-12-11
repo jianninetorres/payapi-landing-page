@@ -58,8 +58,9 @@ const H1Styles = styled.h1`
 `
 
 const HeaderH1Styles = styled(H1Styles)`
+  color: var(--blue-grey);
   @media screen and (min-width: 1024px) {
-    font-size: calc(var(--base-size) * 4.5);
+    font-size: calc(var(--base-size) * 3.5);
     max-width: 550px;
   }
 `

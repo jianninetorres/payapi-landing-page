@@ -12,6 +12,10 @@ const PricingColumnStyles = styled.div`
     margin-bottom: calc(var(--base-size) * 2);
   }
 
+  h2 {
+    color: var(--blue-grey);
+  }
+
   ul {
     width: 100%;
     max-width: 150px;

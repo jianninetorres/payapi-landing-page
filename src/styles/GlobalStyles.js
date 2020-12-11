@@ -47,7 +47,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h3, h4, h5, h6 {
-        font-family: "Roboto Medium", georgia, serif;;
+        font-family: "Roboto Medium", georgia, serif;
+        line-height: 1.2;
     }
 
     p {
